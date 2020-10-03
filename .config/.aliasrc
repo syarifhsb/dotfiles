@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+#command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+#command -v nvim >/dev/null \
+vim(){
+	local VIM_ED=/usr/bin/vim
+	command -v nvim >/dev/null && local VIM_ED=/usr/bin/nvim
+	if [[ "$#" -eq 1 ]]; then
+		$VIM_ED  $1
+	else
+		$VIM_ED "-p$#" "$@"
+	fi
+}
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	bat="cat /sys/class/power_supply/BAT?/capacity" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -v" \
+	ll="ls -l" \
+	la="ls -la" \
+	vimdiff="nvim -d"
+#	mkd="mkdir -pv" \
+#	yt="youtube-dl --add-metadata -i" \
+#	yta="yt -x -f bestaudio/best" \
+#	ffmpeg="ffmpeg -hide_banner"
