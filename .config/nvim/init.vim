@@ -14,10 +14,28 @@ nmap <C-j>	<C-w>j
 nmap <C-k>	<C-w>k
 nmap <C-l>	<C-w>l
 
-call plug#begin('~/.vim/plugged')
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
 
-" Nord theme
-Plug 'arcticicestudio/nord-vim'
+function! NetrwMapping()
+  nnoremap <buffer> <c-l> :wincmd l<cr>
+endfunction
+
+" Plugins
+" Check whether plug-vim is readable. Download if not
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+        echo "Downloading junegunn/vim-plug to manage plugins..."
+        silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+        silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim 
+        autocmd VimEnter * PlugInstall 
+endif
 
 " Initialize plugin system
+call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+" Nord theme
+Plug 'arcticicestudio/nord-vim'
+" Workaroud to sudo on neovim (issue #12103)
+Plug 'lambdalisue/suda.vim'
 call plug#end()

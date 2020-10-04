@@ -53,4 +53,10 @@ xclock -geometry 50x50-1+1 &
 xterm -geometry 80x50+494+51 &
 xterm -geometry 80x20+494-0 &
 exec xterm -geometry 80x66+0+0 -name login &
-exec i3
+#exec i3
+
+case $XDG_VTNR in
+	1	) exec i3;;
+	2	) sh ~/.local/script/reso.sh && exec dwm;;
+	*	) ;;
+esac

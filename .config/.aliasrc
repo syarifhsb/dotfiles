@@ -9,9 +9,11 @@ vim(){
 	if [[ "$#" -eq 1 ]]; then
 		$VIM_ED  $1
 	else
-		$VIM_ED "-p$#" "$@"
+		$VIM_ED "-O$#" "$@"
 	fi
 }
+
+#command -v nvim >/dev/null && alias vim=/usr/bin/nvim
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
