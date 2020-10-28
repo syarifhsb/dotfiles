@@ -24,7 +24,3 @@ alias \
 	ll="ls -l" \
 	la="ls -la" \
 	vimdiff="nvim -d"
-#	mkd="mkdir -pv" \
-#	yt="youtube-dl --add-metadata -i" \
-#	yta="yt -x -f bestaudio/best" \
-#	ffmpeg="ffmpeg -hide_banner"

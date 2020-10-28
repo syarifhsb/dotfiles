@@ -4,3 +4,19 @@
 	email = awesomewonderkid@gmail.com
 [core]
 	editor = nvim
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+[merge]
+	tool = vimdiff3
+[mergetool]
+	path = nvim
+[diff]
+	tool = vimdiff3
+[difftool "vimdiff"]
+	path = nvim
+[difftool "vimdiff3"]
+	path = nvim
+[mergetool "vimdiff3"]
+	path = nvim
