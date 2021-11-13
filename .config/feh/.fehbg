@@ -9,3 +9,8 @@ if [ $(uname -n) = 'alienVM' ]
 then
 	feh --no-fehbg --bg-scale "$XDG_CONFIG_HOME/wal/lighthouse.jpg"
 fi
+
+if [ $(uname -n) = 'AX15' ]
+then
+	feh --no-fehbg --bg-scale "$XDG_CONFIG_HOME/wal/lighthouse.jpg"
+fi

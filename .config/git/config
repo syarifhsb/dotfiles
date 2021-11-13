@@ -1,9 +1,9 @@
 # This is Git's per-user configuration file.
 [user]
 	name = syarif
-	email = awesomewonderkid@gmail.com
+	email = hidayatullah.hsb@gmail.com
 [core]
-	editor = nvim
+	editor = vim
 [alias]
 	st = status
 	ci = commit
@@ -11,12 +11,12 @@
 [merge]
 	tool = vimdiff3
 [mergetool]
-	path = nvim
+	path = vim
 [diff]
 	tool = vimdiff3
 [difftool "vimdiff"]
-	path = nvim
+	path = vim
 [difftool "vimdiff3"]
-	path = nvim
+	path = vim
 [mergetool "vimdiff3"]
-	path = nvim
+	path = vim

@@ -3,8 +3,6 @@
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/syh/.zshrc'
 
-# Alias
-[ -f $XDG_CONFIG_HOME/.aliasrc ] && . $XDG_CONFIG_HOME/.aliasrc
 autoload -U colors && colors
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -19,6 +17,10 @@ SAVEHIST=5000
 bindkey -v # vim binding
 # End of lines configured by zsh-newuser-install
 
+# Load Aliases and shortcut
+[ -f $XDG_CONFIG_HOME/shell/aliasrc ] && . $XDG_CONFIG_HOME/shell/aliasrc
+[ -f $XDG_CONFIG_HOME/shell/shortcutrc ] && . $XDG_CONFIG_HOME/shell/shortcutrc
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -29,8 +31,7 @@ bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 
 # Prompt
-#PROMPT='[%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f] %# '
-PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
