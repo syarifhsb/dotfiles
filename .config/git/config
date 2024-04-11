@@ -3,7 +3,7 @@
 	name = syarif-hsb
 	email = hidayatullah.hsb@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 [alias]
 	st = status
 	ci = commit
