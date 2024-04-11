@@ -39,3 +39,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 command! -bang -complete=dir -nargs=? LS
     \ call fzf#run(fzf#wrap('ls', {'source': 'ls', 'dir': <q-args>}, <bang>0))
+command! -bang -complete=dir -nargs=? LA
+    \ call fzf#run(fzf#wrap('ls', {'source': 'ls -a', 'dir': <q-args>}, <bang>0))
+command! -bang -complete=dir -nargs=? FA
+    \ call fzf#run(fzf#wrap('ls', {'source': 'find .', 'dir': <q-args>}, <bang>0))

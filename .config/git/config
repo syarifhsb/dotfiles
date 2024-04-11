@@ -1,6 +1,6 @@
 # This is Git's per-user configuration file.
 [user]
-	name = syarif
+	name = syarif-hsb
 	email = hidayatullah.hsb@gmail.com
 [core]
 	editor = vim
@@ -10,6 +10,7 @@
 	co = checkout
 	dt = difftool
 	stuf = st --untracked-files=no
+	clist = config --list
 [merge]
 	tool = vimdiff3
 [mergetool]
