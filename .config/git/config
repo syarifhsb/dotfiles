@@ -8,15 +8,17 @@
 	st = status
 	ci = commit
 	co = checkout
+	dt = difftool
+	stuf = st --untracked-files=no
 [merge]
 	tool = vimdiff3
 [mergetool]
 	path = vim
-[diff]
-	tool = vimdiff3
 [difftool "vimdiff"]
-	path = vim
+	path = nvim
 [difftool "vimdiff3"]
 	path = vim
 [mergetool "vimdiff3"]
 	path = vim
+[diff]
+	tool = vimdiff
