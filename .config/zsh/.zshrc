@@ -7,11 +7,11 @@ autoload -U colors && colors
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -d $XDG_CACHE_HOME/.zsh/.zcompdump
 
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.cache/zsh/.zsh_history
+HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 bindkey -v # vim binding
@@ -57,3 +57,4 @@ zle -N zle-line-init
 # Load zsh-syntax-highlighting; should be last. (No plugin yet)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
