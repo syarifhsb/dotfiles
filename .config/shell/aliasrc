@@ -3,6 +3,8 @@
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+
+# Programs aliasing
 alias vim='nvim'
 alias lf='lfub'
 
