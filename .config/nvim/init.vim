@@ -5,7 +5,6 @@ runtime! ftplugin/man.vim
 
 call plug#begin()
 Plug 'morhetz/gruvbox'
-Plug '~/.fzf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 call plug#end()
