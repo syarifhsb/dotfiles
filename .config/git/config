@@ -11,6 +11,7 @@
 	dt = difftool
 	stuf = st --untracked-files=no
 	clist = config --list
+	br = branch
 [merge]
 	tool = vimdiff3
 [mergetool]
