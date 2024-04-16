@@ -11,6 +11,7 @@ call plug#end()
 
 colorscheme gruvbox
 set background=dark
+set nowrapscan
 set hlsearch
 set number relativenumber
 set splitbelow splitright
