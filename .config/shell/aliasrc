@@ -6,5 +6,6 @@ alias lla='ls -la'
 
 # Programs aliasing
 alias vim='nvim'
+alias vimdiff='nvim -d'
 alias lf='lfub'
 

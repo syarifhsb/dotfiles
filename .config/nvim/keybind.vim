@@ -17,7 +17,7 @@ nnoremap <leader>sv :w<C-M>
 
 " Zoom in/out window
 nnoremap Zz <C-W>\|<C-W>_
-nnoremap Zz <C-W>=
+nnoremap Zo <C-W>=
 
 " Capital letter for command until the end of line instead of entire line
 
