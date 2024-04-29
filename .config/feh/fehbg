@@ -1,1 +1,8 @@
-feh --recursive --bg-fill --randomize ~/.config/wal
+#!/bin/sh
+
+# Randomize wallpaper selection
+feh --no-fehbg --bg-scale `find $XDG_CONFIG_HOME/wal/ -type f -name "*.jpg" | shuf -n1`
+
+
+# Select wallpaper
+# feh --no-fehbg --bg-scale "$XDG_CONFIG_HOME/wal/lighthouse.jpg"

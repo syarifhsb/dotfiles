@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/bin/sh 
 
-~/.config/feh/fehbg &
+./.config/feh/fehbg &
+xrandr --output DP-0 --right-of HDMI-0

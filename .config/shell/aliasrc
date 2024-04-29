@@ -1,11 +1,23 @@
 #!/bin/sh
 
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+# Basic commands
+alias \
+	la="ls -a" \
+	ll="ls -l" \
+  lla="ls -la" \
+	lr="ls -lrt" \
+	mv="mv -iv" \
+	cp="cp -iv" \
+	rm="rm -iv" \
+	tlmgr="/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode" \
 
 # Programs aliasing
-alias vim='nvim'
-alias vimdiff='nvim -d'
-alias lf='lfub'
+alias \
+  vim="nvim" \
+  vimdiff="nvim -d" \
+  lf="lfub" \
 
+lbr() {
+  echo "Hello World" $*
+  libreoffice $* >/dev/null 2>&1 &
+}
