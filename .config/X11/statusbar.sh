@@ -2,19 +2,21 @@
 
 # Statusbar loop
 while true; do
-  cap1=$(cat /sys/class/power_supply/BAT0/capacity)
-  cap2=$(cat /sys/class/power_supply/BAT1/capacity)
-  cap=$((($cap1 + $cap2)/2))
-  if [ $cap -gt 90 ]; then
-    batlog=
-  elif [ $cap -gt 65 ]; then
-    batlog=
-  elif [ $cap -gt 35 ]; then
-    batlog=
-  elif [ $cap -gt 10 ]; then
-    batlog=
-  else
-    batlog=
+  if ! [ $(hostname) == "AX15" ]; then
+    cap1=$(cat /sys/class/power_supply/BAT0/capacity)
+    cap2=$(cat /sys/class/power_supply/BAT1/capacity)
+    cap=$((($cap1 + $cap2)/2))
+    if [ $cap -gt 90 ]; then
+      batlog=
+    elif [ $cap -gt 65 ]; then
+      batlog=
+    elif [ $cap -gt 35 ]; then
+      batlog=
+    elif [ $cap -gt 10 ]; then
+      batlog=
+    else
+      batlog=
+    fi
   fi
 
   netw=$(nmcli -g IN-USE,SSID,BARS,SIGNAL dev wifi list | grep '^*')
@@ -39,7 +41,12 @@ while true; do
     wifi="$ssid $bars $signal"
   fi
 
-  xsetroot -name "| $wifi | $batlog $cap% | $( date +"%a %d/%b/%y %R |" )"
+  if ! [ $(hostname) == "AX15" ]; then
+    xsetroot -name "| $wifi | $batlog $cap% | $( date +"%a %d/%b/%y %R |" )"
+  else
+    xsetroot -name "| $wifi | $( date +"%a %d/%b/%y %R |" )"
+  fi
+
   sleep 15s
 done &
 
