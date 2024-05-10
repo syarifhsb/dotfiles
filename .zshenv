@@ -1,0 +1,1 @@
+/home/syarif/.config/zsh/.zshenv

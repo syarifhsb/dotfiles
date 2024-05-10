@@ -13,9 +13,9 @@ alias \
 
 # Programs aliasing
 alias \
-  vim="nvim" \
   vimdiff="nvim -d" \
   lf="lfub" \
+  # vim="nvim" \
 
 lbr() {
   echo "Hello World" $*
