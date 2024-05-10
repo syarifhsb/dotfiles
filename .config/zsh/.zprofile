@@ -18,6 +18,8 @@ if [[ -z $TMUX ]]; then
 fi
 
 # Start X if not started on tty 1 yet
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR = 3 ]]; then
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE="remote/ssh"
+elif systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR = 3 ]]; then
   exec startx
 fi
