@@ -41,10 +41,11 @@ while true; do
     wifi="$ssid $bars $signal"
   fi
 
+  kbd=$(tglkb query)
   if ! [ $(hostname) == "AX15" ]; then
-    xsetroot -name "| $wifi | $batlog $cap% | $( date +"%a %d/%b/%y %R |" )"
+    xsetroot -name "| $kbd | $wifi | $batlog $cap% | $( date +"%a %d/%b/%y %R |" )"
   else
-    xsetroot -name "| $wifi | $( date +"%a %d/%b/%y %R |" )"
+    xsetroot -name "| $kbd | $wifi | $( date +"%a %d/%b/%y %R |" )"
   fi
 
   sleep 15s

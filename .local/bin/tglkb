@@ -1,0 +1,53 @@
+#!/bin/bash
+
+listxkb="us us-intl"
+
+case "$1" in
+  'query')
+    layout=$(setxkbmap -query | grep "^layout" | sed "s/.*:\s*//")
+    variant=$(setxkbmap -query | grep "^variant" | sed "s/.*:\s*//")
+    if [ -z $variant ]; then
+      echo "${layout}"
+    else
+      echo "${layout}-${variant}"
+    fi
+    ;;
+  'layout')
+    setxkbmap -query | grep "^layout" | sed "s/.*:\s*//"
+    ;;
+  'variant')
+    setxkbmap -query | grep "^variant" | sed "s/.*:\s*//"
+    ;;
+  'toggle')
+    listtotal=$(echo $listxkb | sed -e 's/\s/\n/g' | wc -l)
+    count=0
+    for i in $listxkb; do
+      count=$(($count+1))
+      layout=$(setxkbmap -query | grep "^layout" | sed "s/.*:\s*//")
+      variant=$(setxkbmap -query | grep "^variant" | sed "s/.*:\s*//")
+      if [ -z $variant ]; then
+        if [ $i == "${layout}" ]; then
+          break
+        fi
+      else
+        if [ $i == "${layout}-${variant}" ]; then
+          break
+        fi
+      fi
+    done
+
+    if [ $count -lt $listtotal ]; then
+      next=$(($count+1))
+    else
+      next=1
+    fi
+
+    next_layout_variant=$(echo $listxkb | cut -d " " -f $next | sed 's/-/ /g')
+    setxkbmap $next_layout_variant
+    notify-send "Keyboard Layout" "$next_layout_variant" -t 1000
+    ;;
+  *)
+    echo "Usage: "
+    ;;
+esac
+
