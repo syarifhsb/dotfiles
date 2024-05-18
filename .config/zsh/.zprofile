@@ -18,8 +18,14 @@ if [[ -z $TMUX ]]; then
 fi
 
 # Start X if not started on tty 1 yet
+HOST_NAME=$(uname -n)
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   SESSION_TYPE="remote/ssh"
-elif systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR = 3 ]]; then
-  exec startx
+elif systemctl -q is-active graphical.target; then
+  if [[ ! $DISPLAY && $XDG_VTNR -eq 3 && $HOST_NAME = "AX15" ]]; then
+    exec startx
+  fi
+  if [[ ! $DISPLAY && $XDG_VTNR -lt 2 && $HOST_NAME = "archpcx240" ]]; then
+    exec startx
+  fi
 fi
