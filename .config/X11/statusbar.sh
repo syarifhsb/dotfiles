@@ -48,6 +48,6 @@ while true; do
     xsetroot -name "| $kbd | $wifi | $( date +"%a %d/%b/%y %R |" )"
   fi
 
-  sleep 15s
+  sleep 1s
 done &
 

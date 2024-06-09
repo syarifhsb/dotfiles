@@ -1,0 +1,22 @@
+#!/bin/sh
+
+usage(){
+  echo "USAGE:"
+  echo "	$0 <URL> <OUTPUT FOLDER>"
+}
+
+if [ -z $1 ] | [ -z $2 ]; then
+  usage
+  exit 1
+fi
+
+URL=$1
+OUTPUT_FOLDER=$2
+
+FILE_SOURCE=$(yt-dlp --get-filename $URL)
+FILE_WO_EXT=${FILE_SOURCE%.*}
+
+yt-dlp $URL && \
+  ffmpeg -i "$FILE_SOURCE" "$OUTPUT_FOLDER/$FILE_WO_EXT.mp3" && \
+  rm -f "$FILE_SOURCE"
+
