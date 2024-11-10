@@ -24,3 +24,5 @@
 	path = vim
 [diff]
 	tool = vimdiff
+[pull]
+	rebase = false

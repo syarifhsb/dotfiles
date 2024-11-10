@@ -54,5 +54,10 @@ nnoremap <leader>tw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <C-a> <C-b>
 nnoremap <C-b> <C-a>
 
+" Searching strings under visual selection
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+" Search whole word
+vnoremap /* y/\<\V<C-R>=escape(@",'/\')<CR>\><CR>
+
 let g:netrw_menu = 0
 

@@ -1,13 +1,16 @@
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/syarif/.config/zsh/.zshrc'
 
 autoload -U colors && colors
 autoload -Uz compinit
-zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit -d $XDG_CACHE_HOME/.zsh/.zcompdump
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:cp:*' file-sort size reverse
+zstyle :compinstall filename '/home/syarif/.config/zsh/.zshrc'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/.zcompcache
+compinit -d $XDG_CACHE_HOME/zsh/.zcompdump
 fpath=(~/.local/share/zsh $fpath)
 # _comp_options+=(globdots)
 
