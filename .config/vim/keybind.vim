@@ -2,18 +2,6 @@
 let mapleader=" "
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-k> :cprev<CR>
-nnoremap <C-Up> :m .-2<CR>==
-nnoremap <C-Down> :m .+1<CR>==
-inoremap <C-Up> <Esc>:m .-2<CR>==gi
-inoremap <C-Down> <Esc>:m .+1<CR>==gi
-vnoremap <C-Up> :m '<-2<CR>gv=gv
-vnoremap <C-Down> :m '>+1<CR>gv=gv
-nnoremap <Esc>[1;5A :m .-2<CR>==
-nnoremap <Esc>[1;5B :m .+1<CR>==
-inoremap <Esc>[1;5A <Esc>:m .-2<CR>==gi
-inoremap <Esc>[1;5B <Esc>:m .+1<CR>==gi
-vnoremap <Esc>[1;5A :m '<-2<CR>gv=gv
-vnoremap <Esc>[1;5B :m '>+1<CR>gv=gv
 
 nnoremap Y	    y$
 nnoremap * :keepjumps normal! mi*`i<CR>
@@ -50,9 +38,11 @@ nnoremap <C-p>  :call fzf#run(fzf#wrap())<CR>
 " Delete Trailing whitespace
 nnoremap <leader>tw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-" Switch C-a and C-b
-nnoremap <C-a> <C-b>
-nnoremap <C-b> <C-a>
+" Switch C-a and C-b to avoid TMUX binding
+"noremap <C-a> <C-b>
+"noremap <C-b> <C-a>
+"noremap g<C-a> g<C-b>
+"noremap g<C-b> g<C-a>
 
 " Searching strings under visual selection
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
