@@ -5,7 +5,7 @@ so $XDG_CONFIG_HOME/vim/keybind.vim
 syntax on
 set relativenumber number
 set encoding=utf-8
-set fileencoding=utf-8
+" set fileencoding=utf-8
 set termencoding=utf-8
 set ic
 set hlsearch
@@ -69,7 +69,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline' 
 
 " Multiple line selection
-Plug 'mg979/vim-visual-multi', '{branch: master}'
+Plug 'mg979/vim-visual-multi'
 
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}

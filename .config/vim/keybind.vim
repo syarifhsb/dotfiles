@@ -24,8 +24,6 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 vnoremap <C-f> "hy/\<<C-r>h\><CR>
 nnoremap Zz <C-W>_\|<C-W>\|
 nnoremap Zo <C-W>=
-nnoremap <C-n>	O<Esc>
-nnoremap <leader><C-n>	o<Esc>
 " nnoremap <C-i>	o<Esc>
 vnoremap a' 2i'
 vnoremap a" 2i"
