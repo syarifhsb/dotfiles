@@ -40,3 +40,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # bun completions
 [ -s "/home/syarif/.bun/_bun" ] && source "/home/syarif/.bun/_bun"
+

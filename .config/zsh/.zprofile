@@ -11,12 +11,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-if [[ -z $TMUX ]]; then
-  # Add all directories in `~/.local/bin` to $PATH
-  export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
-  export LD_LIBRARY_PATH=${XDG_DATA_HOME}/lib:$LD_LIBRARY_PATH
-fi
-
 # Start X if not started on tty 1 yet
 HOST_NAME=$(uname -n)
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
