@@ -20,6 +20,7 @@ set splitbelow
 set splitright
 set backspace=indent,eol,start
 set wildmenu wildmode=longest:full,full wildoptions=pum
+set mouse=a
 autocmd VimEnter  * silent exec "! echo -ne '\e[2 q'"
 autocmd VimResume * silent exec "! echo -ne '\e[2 q'"
 runtime ftplugin/man.vim
