@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+!.config/
+!.local/bin/
+!.xinitrc
+!.xserverrc
