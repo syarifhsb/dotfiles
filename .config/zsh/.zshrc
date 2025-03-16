@@ -40,8 +40,3 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # bun completions
 [ -s "/home/syarif/.bun/_bun" ] && source "/home/syarif/.bun/_bun"
-
-# deno env
-. "/home/syarif/.deno/env"
-# deno completions
-[ -s "/home/syarif/.deno/_deno" ] && source "/home/syarif/.deno/_deno"
