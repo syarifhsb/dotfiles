@@ -1,7 +1,7 @@
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="firefox"
+export BROWSER="zen-browser"
 export READER="zathura"
 
 if [[ -z $TMUX ]]; then

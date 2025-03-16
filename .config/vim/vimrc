@@ -25,6 +25,7 @@ autocmd VimEnter  * silent exec "! echo -ne '\e[2 q'"
 autocmd VimResume * silent exec "! echo -ne '\e[2 q'"
 runtime ftplugin/man.vim
 let g:ft_man_open_mode = 'vert'
+let g:markdown_recommended_style = 0 " avoid markdown ftplugin set tabs to 4 spaces
 
 command! MakeTags !ctags -R .
 
@@ -59,6 +60,11 @@ if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 let g:prettier#autoformat=1
 let g:prettier#autoformat_require_pragma=0
 
+" Fugitive autocmd, delete fugitive buffer after leaving the buffer
+if has("autocmd")
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+endif 
+
 " Plugin
 call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
 Plug 'junegunn/fzf'
@@ -80,6 +86,9 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install --frozen-lockfile --production',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
+
+" Prisma syntax highlighter
+Plug 'prisma/vim-prisma'
 
 " Colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
