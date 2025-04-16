@@ -20,6 +20,7 @@ nnoremap <leader>vc :e $XDG_CONFIG_HOME/vim/vimrc<CR>
 nnoremap <leader>wr	 :set wrap!<CR>
 nnoremap <leader>tp	 :tabprevious<CR>
 nnoremap <leader>tn	 :tabnext<CR>
+nnoremap <leader>nt	 :NERDTreeToggle<CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 vnoremap <C-f> "hy/\<<C-r>h\><CR>
 nnoremap Zz <C-W>_\|<C-W>\|
@@ -31,7 +32,7 @@ vnoremap a` 2i`
 onoremap a' 2i'
 onoremap a" 2i"
 onoremap a` 2i`
-nnoremap <C-p>  :call fzf#run(fzf#wrap())<CR>
+nnoremap <C-p>  :Files<CR>
 
 " Delete Trailing whitespace
 nnoremap <leader>tw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

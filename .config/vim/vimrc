@@ -6,7 +6,7 @@ syntax on
 set relativenumber number
 set encoding=utf-8
 " set fileencoding=utf-8
-set termencoding=utf-8
+" set termencoding=utf-8
 set ic
 set hlsearch
 set expandtab
@@ -65,9 +65,15 @@ if has("autocmd")
   autocmd BufReadPost fugitive://* set bufhidden=delete
 endif 
 
+" Emmet only on insert mode
+let g:user_emmet_mode='i'
+let g:user_emmet_leader_key='<C-Z>'
+autocmd FileType javascript,typescript,javascriptreact,typescriptreact EmmetInstall
+
 " Plugin
 call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -80,6 +86,10 @@ Plug 'mg979/vim-visual-multi'
 
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+Plug 'preservim/nerdtree'
+
+Plug 'mattn/emmet-vim'
 
 " Autoformat for html, css, js, .etc (mostly web)
 Plug 'prettier/vim-prettier', {
