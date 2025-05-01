@@ -33,6 +33,7 @@ onoremap a' 2i'
 onoremap a" 2i"
 onoremap a` 2i`
 nnoremap <C-p>  :Files<CR>
+nnoremap <leader>g  :Rg<CR>
 
 " Delete Trailing whitespace
 nnoremap <leader>tw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
