@@ -63,12 +63,17 @@ let g:prettier#autoformat_require_pragma=0
 " Fugitive autocmd, delete fugitive buffer after leaving the buffer
 if has("autocmd")
   autocmd BufReadPost fugitive://* set bufhidden=delete
-endif 
+endif
 
 " Emmet only on insert mode
 let g:user_emmet_mode='i'
 let g:user_emmet_leader_key='<C-Z>'
 autocmd FileType javascript,typescript,javascriptreact,typescriptreact EmmetInstall
+
+" Override Rg command
+" Do not take .gitignore into account
+command!      -bang -nargs=* Rg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --no-ignore -- ".fzf#shellescape(<q-args>), fzf#vim#with_preview(), <bang>0)',
 
 " Plugin
 call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
@@ -77,9 +82,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired' 
-Plug 'tpope/vim-fugitive' 
-Plug 'vim-airline/vim-airline' 
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 
 " Multiple line selection
 Plug 'mg979/vim-visual-multi'
