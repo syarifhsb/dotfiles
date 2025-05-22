@@ -1,12 +1,23 @@
-
-source ${XDG_CONFIG_HOME}/nvim/keybind.vim
+source $XDG_CONFIG_HOME/nvim/keybind.vim
 
 runtime! ftplugin/man.vim
 
 call plug#begin()
 Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired' 
+Plug 'tpope/vim-fugitive' 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline' 
+" Multiple line selection
+Plug 'mg979/vim-visual-multi'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Autoformat for html, css, js, .etc (mostly web)
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --production',
+  \ 'for': ['javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
 colorscheme gruvbox
@@ -22,24 +33,10 @@ set expandtab
 
 set wildmode=longest:full
 
+let g:airline_powerline_fonts = 1
+
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-
-" " - Popup window (center of the current window)
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.7, 'relative': v:true } }
-
-" Enable per-command history
-" - History files will be stored in the specified directory
-" - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
-"   'previous-history' instead of 'down' and 'up'.
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-command! -bang -complete=dir -nargs=? LS
-    \ call fzf#run(fzf#wrap('ls', {'source': 'ls', 'dir': <q-args>}, <bang>0))
-command! -bang -complete=dir -nargs=? LA
-    \ call fzf#run(fzf#wrap('ls', {'source': 'ls -a', 'dir': <q-args>}, <bang>0))
-command! -bang -complete=dir -nargs=? FA
-    \ call fzf#run(fzf#wrap('ls', {'source': 'find .', 'dir': <q-args>}, <bang>0))
