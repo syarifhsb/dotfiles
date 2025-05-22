@@ -30,6 +30,8 @@ bindkey -v # use vim binding
 # VIM
 alias vim='VIMINIT='\''let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'\'' vim'
 
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 

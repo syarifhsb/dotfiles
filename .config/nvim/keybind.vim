@@ -13,7 +13,8 @@ nnoremap <leader>g  :Rg<CR>
 nnoremap <leader>wr :set wrap!<C-M>
 
 " Opening vimrc
-nnoremap <leader>vc :e ${XDG_CONFIG_HOME}/nvim/init.vim<C-M>
+nnoremap <leader>iv :e ${XDG_CONFIG_HOME}/nvim/init.vim<C-M>
+nnoremap <leader>vc :vs ${XDG_CONFIG_HOME}/vim/vimrc<C-M>
 
 " Save file
 nnoremap <leader>sv :w<C-M>

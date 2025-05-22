@@ -34,9 +34,3 @@ set expandtab
 set wildmode=longest:full
 
 let g:airline_powerline_fonts = 1
-
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
