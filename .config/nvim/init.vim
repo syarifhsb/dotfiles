@@ -8,7 +8,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired' 
 Plug 'tpope/vim-fugitive' 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline' 
 " Multiple line selection
@@ -32,5 +32,3 @@ set tabstop=2
 set expandtab
 
 set wildmode=longest:full
-
-let g:airline_powerline_fonts = 1
