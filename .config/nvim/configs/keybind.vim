@@ -13,8 +13,8 @@ nnoremap <leader>g  :Rg<CR>
 nnoremap <leader>wr :set wrap!<C-M>
 
 " Opening vimrc
-nnoremap <leader>iv :e ${XDG_CONFIG_HOME}/nvim/init.vim<C-M>
-nnoremap <leader>vc :vs ${XDG_CONFIG_HOME}/vim/vimrc<C-M>
+nnoremap <leader>iv :e $XDG_CONFIG_HOME/nvim/init.lua<C-M>
+nnoremap <leader>vc :vs $XDG_CONFIG_HOME/vim/vimrc<C-M>
 
 " Save file
 nnoremap <leader>sv :w<C-M>
@@ -23,3 +23,7 @@ nnoremap <leader>sv :w<C-M>
 nnoremap Zz <C-W>\|<C-W>_
 nnoremap Zo <C-W>=
 
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-n> :NERDTree<CR>

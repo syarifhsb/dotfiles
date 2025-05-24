@@ -1,17 +1,26 @@
-source $XDG_CONFIG_HOME/nvim/keybind.vim
-
-runtime! ftplugin/man.vim
-
 call plug#begin()
+" Junegunn's
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Tree-sitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+
+" File Explorer
+Plug 'preservim/nerdtree'
+
+" Colorscheme
 Plug 'morhetz/gruvbox'
+
+" Tpope's
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired' 
 Plug 'tpope/vim-fugitive' 
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline' 
 " Multiple line selection
 Plug 'mg979/vim-visual-multi'
@@ -22,15 +31,3 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 call plug#end()
 
-colorscheme gruvbox
-set background=dark
-set nowrapscan
-set hlsearch
-set number relativenumber
-set splitbelow splitright
-
-set shiftwidth=2
-set tabstop=2
-set expandtab
-
-set wildmode=longest:full
