@@ -3,6 +3,8 @@ source $XDG_CONFIG_HOME/nvim/keybind.vim
 runtime! ftplugin/man.vim
 
 call plug#begin()
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
