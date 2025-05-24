@@ -1,6 +1,4 @@
 # The following lines were added by compinstall
-
-
 autoload -U colors && colors
 autoload -Uz compinit
 zmodload zsh/complist
@@ -19,7 +17,9 @@ fpath=(~/.local/share/zsh $fpath)
 HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
-setopt appendhistory
+setopt SHARE_HISTORY              # Share history between all sessions
+setopt HIST_IGNORE_ALL_DUPS       # Avoid duplicated commands
+
 bindkey -v # use vim binding
 # End of lines configured by zsh-newuser-install
 
