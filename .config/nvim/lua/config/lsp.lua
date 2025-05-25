@@ -1,3 +1,8 @@
+vim.diagnostic.config({
+  -- virtual_text = true
+  underline = true
+})
+
 -- Lua
 vim.lsp.config('lua_ls', {
   settings = {
@@ -9,3 +14,14 @@ vim.lsp.config('lua_ls', {
     }
   }
 })
+
+require('mason').setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
+})
+require('mason-lspconfig').setup()

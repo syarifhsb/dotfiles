@@ -7,8 +7,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'nvim-treesitter/playground' " For debugging and/or developing
 
-" nvim-lspconfig
+" LSP Config
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v2.1.0' }
+" Mason
+Plug 'mason-org/mason.nvim'
+Plug 'mason-org/mason-lspconfig.nvim'
+
 
 " Fuzzy Finder
 Plug 'nvim-lua/plenary.nvim'

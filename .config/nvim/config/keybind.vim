@@ -7,7 +7,7 @@ nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
 
 nnoremap <C-p>  :Files<CR>
-nnoremap <leader>g  :Rg<CR>
+" nnoremap <leader>g  :Rg<CR>
 
 " Word Wrapping
 nnoremap <leader>wr :set wrap!<C-M>
