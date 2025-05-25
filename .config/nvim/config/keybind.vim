@@ -6,7 +6,8 @@ nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
 
-nnoremap <C-p>  :Files<CR>
+" FZF
+" nnoremap <C-p>  :Files<CR>
 " nnoremap <leader>g  :Rg<CR>
 
 " Word Wrapping
