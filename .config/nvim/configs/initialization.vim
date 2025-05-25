@@ -13,4 +13,3 @@ set expandtab
 
 " set wildmenu
 set wildmode=longest:full
-lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
