@@ -28,7 +28,7 @@ bindkey -v # use vim binding
 [ -f $XDG_CONFIG_HOME/shell/shortcutrc ] && . $XDG_CONFIG_HOME/shell/shortcutrc
 
 # VIM
-alias vim-original='VIMINIT='\''let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'\'' vim'
+alias vim-original='VIMINIT='\''let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'\'' \vim'
 alias vim='nvim'
 
 alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'

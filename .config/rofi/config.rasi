@@ -1,0 +1,8 @@
+configuration {
+  kb-cancel: ["Control+c", "Escape"];
+  modes: "emoji,calc";
+  show: "emoji";
+  kb-secondary-copy: ["Control+Shift+c"];
+}
+
+@theme "~/.config/rofi/rounded-nord-dark.rasi"
