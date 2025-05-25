@@ -9,7 +9,6 @@ vim.api.nvim_create_autocmd(
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
 			local opts = { buffer = ev.buf }
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-			vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
@@ -19,6 +18,12 @@ vim.api.nvim_create_autocmd(
 			vim.keymap.set("n", "<leader>f", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)
+			-- vim.keymap.set("n", "<leader>gh", vim.lsp.buf.hover, opts)
+      vim.keymap.set("n", "<leader>gh", function()
+        vim.lsp.buf.hover({
+          border = 'single',
+        })
+      end, opts)
 
 			-- Open the diagnostic under the cursor in a float window
 			vim.keymap.set("n", "<leader>d", function()
