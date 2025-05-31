@@ -13,11 +13,6 @@ Plug 'neovim/nvim-lspconfig', { 'tag': 'v2.1.0' }
 Plug 'mason-org/mason.nvim'
 Plug 'mason-org/mason-lspconfig.nvim'
 
-" Fuzzy Finder
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' } " Error vim-plug when plugin install from tag: https://github.com/junegunn/vim-plug/issues/1297
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
 " File Explorer
 Plug 'preservim/nerdtree'
 

@@ -1,5 +1,15 @@
 " Keybinds
 so $XDG_CONFIG_HOME/vim/keybind.vim
+so $XDG_CONFIG_HOME/vim/plugs.vim
+so $XDG_CONFIG_HOME/vim/lsp.vim
+
+" Plugin
+" Colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark    " Setting dark mode
+let g:gruvbox_contrast_dark='medium'
+
+let g:lsp_use_native_client=1
 
 " Basic
 syntax on
@@ -75,38 +85,4 @@ autocmd FileType javascript,typescript,javascriptreact,typescriptreact EmmetInst
 command!      -bang -nargs=* Rg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --no-ignore -- ".fzf#shellescape(<q-args>), fzf#vim#with_preview(), <bang>0)',
 
-" Plugin
-call plug#begin('$XDG_CONFIG_HOME/vim/plugged')
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-
-" Multiple line selection
-Plug 'mg979/vim-visual-multi'
-
-" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-Plug 'preservim/nerdtree'
-
-Plug 'mattn/emmet-vim'
-
-" Autoformat for html, css, js, .etc (mostly web)
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-call plug#end()
-
-" Prisma syntax highlighter
-Plug 'prisma/vim-prisma'
-
-" Colorscheme gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
-set background=dark    " Setting dark mode
-let g:gruvbox_contrast_dark='medium'
 

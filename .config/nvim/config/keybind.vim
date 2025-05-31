@@ -7,8 +7,8 @@ nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
 
 " FZF
-" nnoremap <C-p>  :Files<CR>
-" nnoremap <leader>g  :Rg<CR>
+nnoremap <leader>ff  :Files<CR>
+nnoremap <leader>fg  :Rg<CR>
 
 " Word Wrapping
 nnoremap <leader>wr :set wrap!<C-M>

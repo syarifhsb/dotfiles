@@ -12,7 +12,7 @@ set tabstop=2
 set expandtab
 
 " set wildmenu
-" set wildmode=longest
+set wildmode=longest:full,full
 
 " Column besides line number
 set signcolumn=yes
